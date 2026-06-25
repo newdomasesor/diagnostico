@@ -333,9 +333,10 @@ async function descargarPDF(){
       y += 27;
     }
     function bodyP(text, size=11.5, color=DARK){
+      doc.setFont('helvetica','normal'); doc.setFontSize(size);
       const lines = doc.splitTextToSize(text, CW);
       checkPageBreak(lines.length * 15 + 7);
-      doc.setFont('helvetica','normal'); doc.setFontSize(size); setColor(color);
+      setColor(color);
       doc.text(lines, MX, y);
       y += lines.length * 15 + 9;
     }
